@@ -11,7 +11,6 @@
         };
         private Stack<float> _stack = new();
 
-
         public float Solve(string expression)
         {
             var parsed = Parse(expression);
@@ -38,7 +37,6 @@
             if (_stack.Count != 1) throw new ArgumentException("Не валидное выражение");
             return _stack.Pop();
         }
-
 
         public List<string> Parse(string expression)
         {

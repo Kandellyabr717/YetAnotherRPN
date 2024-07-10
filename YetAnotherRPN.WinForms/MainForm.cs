@@ -57,11 +57,14 @@
             Dock = DockStyle.Fill,
         };
 
-
         public MainForm(Solver solver)
         {
             Text = "Калькулятор обратной польской записи";
-            Icon = new Icon(@"Icon.ico");
+            try
+            {
+                Icon = new Icon(@"Icon.ico");
+            }
+            catch { }
             ClientSize = new Size(400, 200);
             FormBorderStyle = FormBorderStyle.FixedSingle;
 
@@ -71,7 +74,6 @@
 
             _calculateButton.Click += Calculate;
         }
-
 
         private void Calculate(object? sender, EventArgs args)
         {
@@ -87,7 +89,6 @@
                 _resultBox.Text = "";
             }
         }
-
 
         private void InitializeTables()
         {

@@ -6,7 +6,6 @@ namespace YetAnotherRPN.Tests
         private bool ParsingTest(string expression, string[] parsed) => 
             new Solver().Parse(expression).ToArray().SequenceEqual(parsed);
 
-
         [TestMethod]
         public void ParsingTests()
         {
@@ -17,10 +16,8 @@ namespace YetAnotherRPN.Tests
             Assert.IsTrue(ParsingTest("- + * /", ["-", "+", "*", "/"]));
         }
 
-
         private bool SolvingTest(string expression, float result) =>
             new Solver().Solve(expression).Equals(result);
-
 
         [TestMethod]
         public void SolvingTests()
