@@ -66,7 +66,8 @@
             }
             catch { }
             ClientSize = new Size(400, 200);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            
 
             InitializeTables();
             AddControls();
@@ -101,17 +102,17 @@
             _table.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 30));
 
             _topTable.RowStyles.Clear();
-            _topTable.RowStyles.Add(new RowStyle(SizeType.Percent, 33.33f));
-            _topTable.RowStyles.Add(new RowStyle(SizeType.Percent, 33.33f));
-            _topTable.RowStyles.Add(new RowStyle(SizeType.Percent, 33.33f));
+            _topTable.RowStyles.Add(new RowStyle(SizeType.Percent, 33.333333f));
+            _topTable.RowStyles.Add(new RowStyle(SizeType.Percent, 33.333333f));
+            _topTable.RowStyles.Add(new RowStyle(SizeType.Percent, 33.333333f));
             _topTable.ColumnStyles.Clear();
             _topTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 70));
             _topTable.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 30));
             _topTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30));
 
             _bottomTable.RowStyles.Clear();
-            _bottomTable.RowStyles.Add(new RowStyle(SizeType.Percent, 50));
-            _bottomTable.RowStyles.Add(new RowStyle(SizeType.Percent, 50));
+            _bottomTable.RowStyles.Add(new RowStyle(SizeType.Percent, 45));
+            _bottomTable.RowStyles.Add(new RowStyle(SizeType.Percent, 55));
             _bottomTable.ColumnStyles.Clear();
             _bottomTable.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 90));
             _bottomTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100));

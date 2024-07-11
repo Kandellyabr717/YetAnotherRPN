@@ -9,19 +9,23 @@
             {"*", (x, y) => x * y},
             {"/", (x, y) => x / y},
         };
-        private Stack<float> _stack = new();
 
         public float Solve(string expression)
         {
             var parsed = Parse(expression);
-            _stack = new();
+            return Solve(parsed);
+        }
+
+        public float Solve(List<string> parsed)
+        {
+            var stack = new Stack<float>();
             foreach (var operand in parsed)
             {
-                if (_stack.Count < 2) _stack.Push(int.Parse(operand));
-                else if (_stack.Count == 2)
+                if (stack.Count < 2) stack.Push(int.Parse(operand));
+                else if (stack.Count == 2)
                 {
-                    var second = _stack.Pop();
-                    var first = _stack.Pop();
+                    var second = stack.Pop();
+                    var first = stack.Pop();
                     float result;
                     try
                     {
@@ -31,11 +35,11 @@
                     {
                         throw new ArgumentException("Не валидное выражение");
                     }
-                    _stack.Push(result);
+                    stack.Push(result);
                 }
             }
-            if (_stack.Count != 1) throw new ArgumentException("Не валидное выражение");
-            return _stack.Pop();
+            if (stack.Count != 1) throw new ArgumentException("Не валидное выражение");
+            return stack.Pop();
         }
 
         public List<string> Parse(string expression)
