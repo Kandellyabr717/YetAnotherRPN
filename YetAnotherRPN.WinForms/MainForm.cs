@@ -67,7 +67,6 @@
             catch { }
             ClientSize = new Size(400, 200);
             FormBorderStyle = FormBorderStyle.FixedDialog;
-            
 
             InitializeTables();
             AddControls();
