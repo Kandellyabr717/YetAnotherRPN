@@ -13,7 +13,7 @@
         {
             Text = "=",
             Dock = DockStyle.Fill,
-            TextAlign = ContentAlignment.MiddleCenter,
+            TextAlign = ContentAlignment.TopCenter,
             Font = new Font("Consolas", 13)
         };
         private Label _resultLabel = new()
@@ -60,11 +60,7 @@
         public MainForm(Solver solver)
         {
             Text = "Калькулятор обратной польской записи";
-            try
-            {
-                Icon = new Icon(@"Icon.ico");
-            }
-            catch { }
+            Icon = Resources.Icon;
             ClientSize = new Size(400, 200);
             FormBorderStyle = FormBorderStyle.FixedDialog;
 
@@ -73,6 +69,7 @@
             _solver = solver;
 
             _calculateButton.Click += Calculate;
+            _inputBox.KeyDown += EnterHotkey;
         }
 
         private void Calculate(object? sender, EventArgs args)
@@ -88,6 +85,11 @@
                 _exeptionLabel.Text = exeption.Message;
                 _resultBox.Text = "";
             }
+        }
+
+        private void EnterHotkey(object? sender, KeyEventArgs args)
+        {
+            if (args.KeyCode == Keys.Enter) Calculate(sender, args);
         }
 
         private void InitializeTables()
