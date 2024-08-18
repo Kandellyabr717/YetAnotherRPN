@@ -61,7 +61,7 @@
         {
             Text = "Калькулятор обратной польской записи";
             Icon = Resources.Icon;
-            Size = new Size(400, 200);
+            ClientSize = new Size(400, 200);
             FormBorderStyle = FormBorderStyle.FixedDialog;
 
             InitializeTables();
