@@ -1,2 +1,2 @@
 # YetAnotherRPN
-Very simple and small calculator for reversed polish notation
+A simple calculator for reversed polish notation
